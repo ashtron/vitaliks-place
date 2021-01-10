@@ -4,7 +4,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(40, 25px);
+  grid-template-columns: repeat(10, 25px);
   justify-content: center;
 }
 

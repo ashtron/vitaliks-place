@@ -13,14 +13,13 @@ class App extends React.Component {
     }
   }
 
-  handleChange = (newColor) => {
-    this.setState({ selectedColor: newColor })
-  }
-
   render() {
     return (
       <div>
-        <HexColorPicker color={this.state.selectedColor} onChange={this.handleChange} />
+        <HexColorPicker
+          color={this.state.selectedColor}
+          onChange={(newColor) => this.setState({ selectedColor: newColor })}
+        />
         <Canvas selectedColor={this.state.selectedColor} />
       </div>
     )

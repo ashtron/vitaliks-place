@@ -9,23 +9,11 @@ class Pixel extends React.Component {
         }
     }
 
-    handleClick = () => {
-        this.setState({ color: this.props.selectedColor })
-    }
-
-    handleMouseMove = () => {
-        if (this.props.isDrawing) {
-            this.setState({ color: this.props.selectedColor })
-        }
-    }
-
     render() {
         return (
             <div
                 className="pixel"
-                onClick={this.handleClick}
-                onMouseMove={this.handleMouseMove}
-                isDrawing={this.props.isDrawing}
+                onMouseDown={() => this.setState({ color: this.props.selectedColor })}
                 style={{backgroundColor: this.state.color}}
             ></div>
         )
