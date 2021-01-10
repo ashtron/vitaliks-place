@@ -17,15 +17,11 @@ class App extends React.Component {
     this.setState({ selectedColor: newColor })
   }
 
-  handlePixelClick = (event) => {
-    console.log(event)
-  }
-
   render() {
     return (
       <div>
         <HexColorPicker color={this.state.selectedColor} onChange={this.handleChange} />
-        <Canvas handleClick={this.handlePixelClick} selectedColor={this.state.selectedColor} />
+        <Canvas selectedColor={this.state.selectedColor} />
       </div>
     )
   }

@@ -10,8 +10,13 @@ class Pixel extends React.Component {
     }
 
     handleClick = () => {
-        console.log(this.props.selectedColor);
         this.setState({ color: this.props.selectedColor })
+    }
+
+    handleMouseMove = () => {
+        if (this.props.isDrawing) {
+            this.setState({ color: this.props.selectedColor })
+        }
     }
 
     render() {
@@ -19,6 +24,8 @@ class Pixel extends React.Component {
             <div
                 className="pixel"
                 onClick={this.handleClick}
+                onMouseMove={this.handleMouseMove}
+                isDrawing={this.props.isDrawing}
                 style={{backgroundColor: this.state.color}}
             ></div>
         )
