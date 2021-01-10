@@ -9,11 +9,19 @@ class Pixel extends React.Component {
         }
     }
 
+    handleMouseDown = (event) => {
+        event.preventDefault()
+
+        this.setState({ color: this.props.selectedColor })
+
+        this.props.updateGrid(this.props.selectedColor, this.props.id)
+    }
+
     render() {
         return (
             <div
                 className="pixel"
-                onMouseDown={() => this.setState({ color: this.props.selectedColor })}
+                onMouseDown={this.handleMouseDown}
                 style={{backgroundColor: this.state.color}}
             ></div>
         )

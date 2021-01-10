@@ -12,7 +12,10 @@ class Canvas extends React.Component {
         for (let i = 0; i < 100; i++) {
             pixels.push(
                 <Pixel
+                    key={i}
+                    id={i}
                     selectedColor={this.props.selectedColor}
+                    updateGrid={this.props.updateGrid}
                 />
             )
         }
